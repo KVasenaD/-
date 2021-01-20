@@ -1,0 +1,209 @@
+/*! Pushy - v1.1.0 - 2017-1-30
+* Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
+* https://github.com/christophery/pushy/
+* by Christopher Yee */
+/* Menu Appearance */
+
+@media screen and (min-width: 641px) {
+
+ .pushy{
+    position: absolute;
+     top:30px;
+     right: 10px;
+     text-align: center;
+}   
+.pushy-content ul {
+	margin: 0;
+	padding: 0;
+}
+.pushy-content li {
+	margin: 0px 15px 0px 15px;
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+	*display:inline; /* ie7 */
+}
+.pushy-content a {
+	padding: 0 12px;
+	text-decoration: none;
+    font-size: 25px;
+	color: #fff;
+	line-height: 100%;
+    font-weight: 900;
+    
+}
+.pushy-content a:hover {
+	color: #b64024;
+}
+.pushy-content .current a{
+	background: #b64024;
+	color: #fff;
+	border-radius: 3px;
+}
+#container{
+display: none; /* скрыть все <li> пункты */
+margin: 0;
+}
+}
+@media screen and (max-width: 1146px) {
+    .pushy-content a {
+        font-size: 25px;
+    }
+    .pushy-content li {
+	margin: 0px 5px 0px 5px;
+    
+}
+    @media screen and (max-width: 1028px) {
+    .pushy-content a {
+        font-size: 24px;
+        
+    }
+    .pushy-content li {
+	margin: 0px -5px 0px -5px;
+        
+        
+    
+}
+    }
+     @media screen and (max-width: 902px) {
+         .pushy{width: 600px;}
+           
+    
+
+    }
+     @media screen and (max-width: 784px) {
+         .pushy{width: 550px;}
+           
+    
+
+    }
+    @media screen and (max-width: 700px) {
+         .pushy{width: 450px;}
+           
+    
+
+    }
+@media screen and (max-width: 640px) {
+.pushy {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  top: 0px;
+    font-weight: 900;
+  z-index: 9999;
+  background: #f8ebc8;
+    opacity: 0.8;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  /* enables momentum scrolling in iOS overflow elements */
+}
+    .second{
+        display: flex;
+        flex-direction: column;  
+    }
+    .ya-taxi-widget{
+        width: 180px;
+    }
+.menu-btn{
+    position: absolute;
+    top: 20px;
+    right:10px;
+    font-size: 30px;
+}
+    
+.pushy a {
+  display: block;
+  color: #000;
+  padding: 15px 15px;
+  text-decoration: none;
+    font-size: 28px;
+}
+.pushy a:hover {
+  color: #b64024;
+    
+}
+.pushy ul:first-child {
+  margin-top: 10px;
+}
+
+.pushy.pushy-right {
+  right: 0;
+}
+
+.pushy-content {
+  visibility: hidden;
+    
+}
+.pushy-content ul{
+    list-style-type:none;
+margin-left: -30px;}
+/* Menu Movement */
+
+
+.pushy-right {
+  -webkit-transform: translate3d(200px, 0, 0);
+  -ms-transform: translate3d(200px, 0, 0);
+  transform: translate3d(200px, 0, 0);
+}
+
+.pushy-open-right #container,
+.pushy-open-right .push {
+  display:none;
+}
+
+.pushy-open-right .pushy {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.pushy-open-right .pushy-content {
+  visibility: visible;
+}
+    
+/* Menu Transitions */
+#container,
+.pushy,
+.push {
+  transition: transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+
+.pushy-content {
+  transition: visibility 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+
+/* Site Overlay */
+.site-overlay {
+  display: none;
+}
+
+
+.pushy-open-right .site-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9998;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-animation: fade 500ms;
+  animation: fade 500ms;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

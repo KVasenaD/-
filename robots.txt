@@ -1,0 +1,4 @@
+User-agent: *
+Crawl-delay: 1
+Host: bruspub.ru
+Sitemap: http://bruspub.ru/sitemap.xml
